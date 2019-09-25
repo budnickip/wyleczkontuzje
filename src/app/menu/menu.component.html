@@ -13,11 +13,18 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
+    <ul class="navbar-nav mr-auto">
       <a class="nav-item nav-link active" routerLink="/content">Strona główna <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" routerLink="/sklep">Sklep</a>
-      <a class="nav-item nav-link" routerLink="/rejestracja">Rejestracja</a>
-      <a class="nav-item nav-link" routerLink="/logowanie">Logowanie</a>
-    </div>
+    </ul>
+    <ul class="nav navbar-nav">
+      <fa-icon [icon]="faUser" class="d-none d-lg-block menu-icon"></fa-icon> <!-- ukrywam ikonę, kiedy szerokość strony odpowiada
+      urządzeniom mobilnym -- ikona pobrana z fontawesome, zeby to zrobic najpierw musiałem zainstalować FA, później w wybranym module
+    zaimportować ją z @fortawesome/free-solid-svg-icons' -->
+      <li class="nav-item">
+        <a class="nav-item nav-link" routerLink="/rejestracja">Rejestracja</a>
+        <a class="nav-item nav-link" routerLink="/logowanie">Logowanie</a>
+      </li>
+  </ul>
   </div>
 </nav>
