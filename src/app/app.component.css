@@ -1,0 +1,9 @@
+.right-menu{
+  background-color: #f9f8fa;
+  border-radius: 20px;
+  position: fixed;
+  right: 10px;
+  top: 10em;
+  height: 8em;
+  width: 4em;
+}

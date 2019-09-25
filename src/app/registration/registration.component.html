@@ -1,3 +1,90 @@
-<p>
-  registration works!
-</p>
+<div class="container">
+  <div class="row mb-4 mt-4">
+    <div class="col">
+      Pola oznaczone * są obowiązkowe
+    </div>
+  </div>
+
+  <form class="form-registration mb-4 mt-4">
+    <img class="mb-3 mx-auto d-block" src="assets/img/wyleczkontuzje_foto.png" alt="" width="90" height="72">
+    <h1 class="h3 mb-3 font-weight-normal text-center">Rejestracja</h1>
+    <div class="form-group">
+      <label for="remail">E-mail *</label>
+      <input type="remail" class="form-control" id="remail" placeholder="Wpisz swój email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="rpassword">Hasło *</label>
+      <input type="rpassword" class="form-control" id="rpassword" placeholder="Wpisz swoje hasło" required>
+      <small class="form-text text-muted">
+        Hasło musi zawierać conajmniej 8 znaków w tym conajmniej jedną cyfrę
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="rpassword2">Powtórz hasło *</label>
+      <input type="rpassword2" class="form-control" id="rpassword2" placeholder="Wpisz ponownie swoje hasło" required>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="rname">Imię</label>
+        <input type="rname" class="form-control" id="rname" placeholder="Podaj swoje imie">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="rlastname">Nazwisko</label>
+        <input type="rlastname" class="form-control" id="rlastname" placeholder="Podaj swoje nazwisko">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-8">
+        <label for="rstreet">Ulica, numer bloku</label>
+        <input type="rstreet" class="form-control" id="rstreet" placeholder="Podaj swój adres">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="rhomenumber">Numer mieszkania</label>
+        <input type="rhomenumber" class="form-control" id="rhomenumber" placeholder="Podaj numer mieszkania">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-5">
+        <label for="rcity">Miasto</label>
+        <input type="rcity" class="form-control" id="rcity" placeholder="Podaj miasto">
+      </div>
+      <div class="form-group col-md-5">
+        <label for="rcounty">Województwo</label>
+        <select id="rcounty" class="form-control">
+          <option selected> Wybierz... </option>
+          <option> Dolnośląskie </option>
+          <option> Kujawsko-pomorskie </option>
+          <option> Lubelskie </option>
+          <option> Lubuskie </option>
+          <option> Łódzkie </option>
+          <option> Małopolskie </option>
+          <option> Mazowieckie </option>
+          <option> Oposkie </option>
+          <option> Podkarpackie </option>
+          <option> Podlaskie </option>
+          <option> Pomorskie </option>
+          <option> Śląskie </option>
+          <option> Świętokrzyskie </option>
+          <option> Warmińsko-mazurskie </option>
+          <option> Wielkopolskie </option>
+          <option> Zachodniopomorskie </option>
+        </select>
+      </div>
+      <div class="form-group col-md-2">
+        <label for="rpostalcode">Kod pocztowy</label>
+        <input type="rpostalcode" class="form-control" id="rpostalcode" placeholder="Kod pocztowy">
+      </div>
+    </div>
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember"> Zapamiętaj mnie
+      </label>
+    </div>
+    <button class="btn btn-primary btn-block" type="submit">Zarejestruj się</button>
+  </form>
+</div>
