@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) {
+
+  }
 
   ngOnInit() {
   }
 
+  public goTo(link: string): void{
+    this.router.navigate([link]);
+  }
 }

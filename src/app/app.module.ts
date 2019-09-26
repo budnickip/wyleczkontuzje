@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { FormsModule } from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown'; //import skryptow javascript bootstrapa
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
@@ -16,6 +17,9 @@ import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { ShopComponent } from './shop/shop.component';
 import { SearchComponent } from './search/search.component';
+import { AdminComponent } from './admin/admin.component';
+import { ObszernyBocznyComponent } from './obszerny-boczny/obszerny-boczny.component';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
@@ -27,10 +31,14 @@ import { SearchComponent } from './search/search.component';
     RegistrationComponent,
     LoginComponent,
     ShopComponent,
-    SearchComponent
+    SearchComponent,
+    AdminComponent,
+    ObszernyBocznyComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     FontAwesomeModule,
     BsDropdownModule.forRoot(),

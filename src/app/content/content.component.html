@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row mt-4 mb-4">
-    <div class="col-lg-4 left-content">
+    <div class="col-lg-4">
       <div class="row">
         <div class="col-4">
           <img src="assets/img/ankle.jpg" class="circle" alt="ankle">
@@ -9,7 +9,9 @@
           <img src="assets/img/elbow.jpg" class="circle" alt="elbow">
         </div>
         <div class="col-4">
-          <img src="assets/img/knee.jpg" class="circle" alt="knee">
+          <a routerLink="/kolano">
+            <img src="assets/img/knee.jpg" class="circle" alt="knee">
+          </a>
         </div>
       </div>
       <div class="row mt-4">
@@ -34,11 +36,27 @@ Wiele czynników wpływa na to, w jakim stopniu jesteśmy podatni na kontuzje:
     </div>
     <div class="col-lg-8 text-center">
       <p> Kliknij w bolące miejsce, aby uzyskać więcej informacji o kontuzji </p>
-      <img class="mb-3 img-fluid" src="assets/img/human2.PNG" alt="">
+       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 745 640">
+         <g>
+           <a (click)="goTo('/obszerny-boczny')">
+             <title> mięsień obszerny boczny </title>
+             <path d="M237,336 L231,313 235,310 230,310 226,299 212,355 216,405 229,409 232,403 242,362 238,336 228,305 z"/>
+             <path d="M122,389 L118,364 123,327 132,300 146,362 136,405 128,406 122,391 119,362 z"  />
+            </a>
+          </g>
+          <g>
+            <a (click)="goTo('/obszerny-boczny')">
+              <title> mięsień dwugłowy łydki </title>
+              <path d="M517,443 L526,455 531,449 538,464 538,480 542,500 541,516 539,531 524,516 510,528 503,516 503,493 504,480 508,457 z"  />
+              <path d="M620,443 L632,457 632,461 635,478 639,497 635,520 629,527 625,523 615,516 606,524 600,530 596,517 599,497 603,478 600,466 610,449 615,454 z"  />
+              <path d="M211,480 L207,501 207,529 212,545 216,566 220,527 221,513 220,492 211,477 z"  />
+              <path d="M140,489 L136,501 140,533 140,583 145,547 152,515 150,498 146,476 z"  />
+            </a>
+          </g>
+       </svg>
+       <div class="row">
+         Źródło obrazu: http://www.shapesense.com/images/blank-muscle-anatomy.jpg
+       </div>
     </div>
   </div>
-
 </div>
-<nav>
-  <a routerLink="/kolano">Kolano</a>
-</nav>
