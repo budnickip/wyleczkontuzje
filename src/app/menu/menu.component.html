@@ -21,11 +21,14 @@
     <ul class="nav navbar-nav">
       <input class="form-control mr-sm-2 searchbox" type="search" [(ngModel)]="searchText"  placeholder="Wyszukaj kontuzje">
       <div *ngIf="searchText" >
+        <p> Wybierz kontuzje z listy </p>
         <ul *ngFor="let data of dataset | filter: searchText">
           <li><a routerLink="/{{data}}">{{data}} </a></li>
         </ul>
       </div>
-      <fa-icon [icon]="faUser" class="d-none d-lg-block menu-icon"></fa-icon> <!-- ukrywam ikonę, kiedy szerokość strony odpowiada
+      <a routerLink="/admin">
+      <fa-icon [icon]="faUser" class="d-none d-lg-block menu-icon"></fa-icon>
+      </a><!-- ukrywam ikonę, kiedy szerokość strony odpowiada
       urządzeniom mobilnym -- ikona pobrana z fontawesome, zeby to zrobic najpierw musiałem zainstalować FA, później w wybranym module
     zaimportować ją z @fortawesome/free-solid-svg-icons' -->
       <li class="nav-item">

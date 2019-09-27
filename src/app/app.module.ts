@@ -20,6 +20,12 @@ import { SearchComponent } from './search/search.component';
 import { AdminComponent } from './admin/admin.component';
 import { ObszernyBocznyComponent } from './obszerny-boczny/obszerny-boczny.component';
 import { FilterPipe } from './filter.pipe';
+import { FlossComponent } from './floss/floss.component';
+import { BandComponent } from './band/band.component';
+import { BallComponent } from './ball/ball.component';
+import { RollerComponent } from './roller/roller.component';
+import { MatComponent } from './mat/mat.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -34,7 +40,12 @@ import { FilterPipe } from './filter.pipe';
     SearchComponent,
     AdminComponent,
     ObszernyBocznyComponent,
-    FilterPipe
+    FilterPipe,
+    FlossComponent,
+    BandComponent,
+    BallComponent,
+    RollerComponent,
+    MatComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +54,8 @@ import { FilterPipe } from './filter.pipe';
     FontAwesomeModule,
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

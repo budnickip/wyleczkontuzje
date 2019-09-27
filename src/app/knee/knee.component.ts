@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { FLOSS } from '../mock-product';
 @Component({
   selector: 'app-knee',
   templateUrl: './knee.component.html',
@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KneeComponent implements OnInit {
 
+  floss = FLOSS;
   constructor() { }
 
   ngOnInit() {
