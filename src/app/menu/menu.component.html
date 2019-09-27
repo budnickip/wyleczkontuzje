@@ -27,7 +27,7 @@
         </ul>
       </div>
       <a routerLink="/admin">
-      <fa-icon [icon]="faUser" class="d-none d-lg-block menu-icon"></fa-icon>
+        <fa-icon [icon]="faUser" class="d-none d-lg-block menu-icon"></fa-icon>
       </a><!-- ukrywam ikonę, kiedy szerokość strony odpowiada
       urządzeniom mobilnym -- ikona pobrana z fontawesome, zeby to zrobic najpierw musiałem zainstalować FA, później w wybranym module
     zaimportować ją z @fortawesome/free-solid-svg-icons' -->
@@ -38,5 +38,7 @@
   </ul>
   </div>
  </nav>
- <fa-icon [icon]="faShoppingCart" class="menu-icon float-right"></fa-icon>
+ <a routerLink="/koszyk">
+   <fa-icon [icon]="faShoppingCart" class="menu-icon float-right"></fa-icon>
+ </a>
 </div>

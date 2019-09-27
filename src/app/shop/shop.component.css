@@ -10,8 +10,3 @@ a.product-link {
 a.product-link :hover{
   background-color: #ddd;
 }
-
-.shop-icon{
-  font-size: 1.5em;
-  color: #0078d2;
-}

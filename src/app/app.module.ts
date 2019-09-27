@@ -25,7 +25,12 @@ import { BandComponent } from './band/band.component';
 import { BallComponent } from './ball/ball.component';
 import { RollerComponent } from './roller/roller.component';
 import { MatComponent } from './mat/mat.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {MatNativeDateModule} from '@angular/material/core';
+import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
+
 
 @NgModule({
   declarations: [
@@ -45,7 +50,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BandComponent,
     BallComponent,
     RollerComponent,
-    MatComponent
+    MatComponent,
+    ShoppingcartComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +61,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

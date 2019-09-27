@@ -12,6 +12,8 @@ export class MenuComponent implements OnInit {
   dataset = ['kolano', 'udo', 'obszerny-boczny', 'Framework', 'SPA', 'React', 'Vue'];
   constructor() { }
 
+
+
   ngOnInit() {
   }
 

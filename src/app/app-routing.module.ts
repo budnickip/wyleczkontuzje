@@ -13,7 +13,7 @@ import { BandComponent} from './band/band.component';
 import { BallComponent} from './ball/ball.component';
 import { MatComponent} from './mat/mat.component';
 import { RollerComponent} from './roller/roller.component';
-
+import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/content', pathMatch: 'full'}, //domyślnie na stronie głównej będzie wyświetlał się content
@@ -29,6 +29,7 @@ const routes: Routes = [
   { path: 'ball', component: BallComponent},
   { path: 'mat', component: MatComponent },
   { path: 'roller', component: RollerComponent },
+  { path: 'koszyk', component: ShoppingcartComponent },
   { path: 'kolano', component: KneeComponent }
 ];
 
