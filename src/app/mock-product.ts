@@ -25,7 +25,7 @@ export const BALL: Product = {
   shortdescription: 'Idealna do rozluźniania miejscowego',
   description: 'Idealna do rozluźniania bolącego miejsca, dociera w najgłębszy ból',
   image: 'assets/img/products/ball.jpg',
-  amount: 15
+  amount: 2
 }
 
 export const MAT: Product = {

@@ -31,7 +31,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatNativeDateModule} from '@angular/material/core';
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

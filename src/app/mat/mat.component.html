@@ -1,3 +1,27 @@
-<p>
-  mat works!
-</p>
+<div class="container">
+  <div class="row mt-4">
+    <div class="col-lg-6 offset-lg-3">
+      <div>
+        <h4 class="text-center"> {{mat.name}} </h4>
+        <img class="img-fluid" src="{{mat.image}}" alt="mat">
+        <div class="mt-4">
+          <p> {{mat.description}} </p>
+          <div class="row">
+            <div class="col-lg-6">
+              <p class="font-weight-bold"> Cena {{mat.price}} zł </p>
+              <p> ilość w magazynie: {{mat.amount}} </p>
+            </div>
+            <div *ngIf="mat.amount > 0; else elseBlock" class="col-lg-6 mb-2 mt-2">
+              <button type="button" (click)="addToCart(mat)" class="btn btn-primary"><fa-icon [icon]="faShoppingCart"></fa-icon> Do koszyka</button>
+            </div>
+            <ng-template #elseBlock>
+              <div class="col-lg-6 mb-2 mt-2">
+                <button type="button" (click)="addToCart(mat)" class="btn btn-primary" title="Brak produktu w magazynie!" disabled><fa-icon [icon]="faShoppingCart" ></fa-icon> Do koszyka</button>
+              </div>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

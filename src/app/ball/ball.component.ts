@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FLOSS, BAND, BALL, MAT, ROLLER } from '../mock-product';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { CartService } from '../cart.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-ball',
@@ -16,13 +17,19 @@ export class BallComponent implements OnInit {
   roller = ROLLER;
   faShoppingCart = faShoppingCart;
   constructor(
-    private cartService: CartService
+    private cartService: CartService,
+    private location: Location
   ) { }
 
   ngOnInit() {
   }
   addToCart(product) {
-    window.alert('Your product has been added to the cart!');
+    window.alert('Dodałeś produkt do koszyka!');
     this.cartService.addToCart(product);
+    product.amount--;
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }

@@ -1,6 +1,13 @@
-<h3>Cart</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 offset-md-4">
+      <h3>Twoje produkty</h3>
 
-<div class="cart-item" *ngFor="let item of items">
-  <span>{{ item.name }}</span>
-  <span>{{ item.price }}</span>
+      <div class="item mt-4" *ngFor="let item of items">
+        <span>{{ item.name }}</span>
+        <span>{{ item.price }}</span>
+      </div>
+      <button type="button" (click)="onClear()" class="btn btn-primary mt-4"> Wyczyść koszyk </button>
+    </div>
+  </div>
 </div>
