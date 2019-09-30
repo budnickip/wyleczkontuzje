@@ -1,3 +1,102 @@
-<p>
-  obszerny-boczny works!
-</p>
+<div class="container">
+   <div class="row mt-4">
+     <div class="col-12 text-center">
+       <h1> Rehabilitacja mięśnia czworogłowego uda </h1>
+     </div>
+   </div>
+   <div class="row mt-4">
+     <div class="col-lg-6">
+       <p> Podczas pierwszych 24-48 godzin po uszkodzeniu mięśnia najważniejsze jest stosowanie się do metody PRICE , dzięki której ustąpi
+         stan zapalny, dzięki czemu skrócony zostanie czas regeneracji i zmniejszy się uczucie bólu.
+       </p>
+       <ul>
+         <li> - P – protection – krótki okres odciążenia oraz usztywnienia miejsca bólu jest wskazany w przypadku większości kontuzji, </li>
+         <li> - R – rest – odpoczynek oraz nienadwyrężanie pozwoli na szybszą regeneracje,</li>
+         <li> - I – ice – krioterapia spowalnia i zapobiega dalszy obrzęk, zmniejsza ból i skurcz mięśni,</li>
+         <li> - C – compression – kompresja, czyli użycie bandażu elastycznego w miejscu urazu pozwala na ograniczenie obrzęku,</li>
+         <li> - E – elevation – unoszenie nogi nad poziomem ciała umożliwia odpływ limfy.</li>
+       </ul>
+       <p>
+         Po upływie 5 dni można rozpocząć wykonywanie ćwiczeń wzmacniających zaprezentowanych na filmiku, zaś rozciąganie mięśni można rozpocząć dopiero
+         po minięciu 7 dni od powstania urazu.
+       </p>
+     </div>
+     <div class="col-lg-6">
+       <iframe width="560" height="315" src="https://www.youtube.com/embed/419TQeudtIU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       <div class="row mt-4">
+         <div class="col-lg-6 offset-3">
+           <button type="button" (click)="addInjury()" class="btn btn-primary btn-block">Dodaj do listy kontuzji</button>
+         </div>
+       </div>
+     </div>
+   </div>
+   <div class="row mt-4">
+     <div class="col-lg-12">
+       <p> Produkty, które zostały użyte na filmiku prezentującym możliwość rehabilitacji: </p>
+     </div>
+   </div>
+   <div class="row mt-4">
+     <div class="col-lg-4">
+       <div *ngIf="mat.amount > 0; else elseBlock" class="col-lg-6 mb-2 mt-2">
+         <button type="button" (click)="addToCart(mat)" class="btn btn-primary"><fa-icon [icon]="faShoppingCart"></fa-icon> Do koszyka</button>
+       </div>
+       <ng-template #elseBlock>
+         <div class="col-lg-6 mb-2 mt-2">
+           <button type="button" (click)="addToCart(mat)" class="btn btn-primary" title="Brak produktu w magazynie!" disabled><fa-icon [icon]="faShoppingCart" ></fa-icon> Do koszyka</button>
+         </div>
+       </ng-template>
+       <a routerLink="/mat" class="product-link">
+         <div class="product-area text-center">
+           <h4> {{mat.name}} </h4>
+           <img class="img-fluid product-image" src="{{mat.image}}" alt="mat">
+           <div>
+             <p> {{mat.shortdescription}} </p>
+             <p class="font-weight-bold"> Cena {{mat.price}} zł </p>
+           </div>
+         </div>
+       </a>
+     </div>
+
+     <div class="col-lg-4">
+       <div *ngIf="roller.amount > 0; else elseBlock" class="col-lg-6 mb-2 mt-2">
+         <button type="button" (click)="addToCart(roller)" class="btn btn-primary"><fa-icon [icon]="faShoppingCart"></fa-icon> Do koszyka</button>
+       </div>
+       <ng-template #elseBlock>
+         <div class="col-lg-6 mb-2 mt-2">
+           <button type="button" (click)="addToCart(roller)" class="btn btn-primary" title="Brak produktu w magazynie!" disabled><fa-icon [icon]="faShoppingCart" ></fa-icon> Do koszyka</button>
+         </div>
+       </ng-template>
+       <a routerLink="/roller" class="product-link">
+         <div class="product-area text-center">
+           <h4> {{roller.name}} </h4>
+           <img class="img-fluid product-image" src="{{roller.image}}" alt="roller">
+           <div>
+             <p> {{roller.shortdescription}} </p>
+             <p class="font-weight-bold"> Cena {{roller.price}} zł </p>
+           </div>
+         </div>
+       </a>
+     </div>
+
+     <div class="col-lg-4">
+       <div *ngIf="band.amount > 0; else elseBlock" class="col-lg-6 mb-2 mt-2">
+         <button type="button" (click)="addToCart(band)" class="btn btn-primary"><fa-icon [icon]="faShoppingCart"></fa-icon> Do koszyka</button>
+       </div>
+       <ng-template #elseBlock>
+         <div class="col-lg-6 mb-2 mt-2">
+           <button type="button" (click)="addToCart(band)" class="btn btn-primary" title="Brak produktu w magazynie!" disabled><fa-icon [icon]="faShoppingCart" ></fa-icon> Do koszyka</button>
+         </div>
+       </ng-template>
+       <a routerLink="/band" class="product-link">
+         <div class="product-area text-center">
+           <h4> {{band.name}} </h4>
+           <img class="img-fluid product-image" src="{{band.image}}" alt="floss">
+           <div>
+             <p> {{band.shortdescription}} </p>
+             <p class="font-weight-bold"> Cena {{band.price}} zł </p>
+           </div>
+         </div>
+       </a>
+     </div>
+   </div>
+</div>

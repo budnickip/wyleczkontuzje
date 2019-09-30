@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <p> Lista Twoich kontuzji </p>
+      <ul>
+        <ng-container *ngIf="cookiesService.check('obszerny'); else userObszerny;">
+          <li> Mięsień czworogłowy uda </li>
+        </ng-container>
+        
+      </ul>
+    </div>
+  </div>
+</div>

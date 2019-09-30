@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CookiesService} from '../cookies.service';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private cookiesService: CookiesService) { }
 
   ngOnInit() {
   }
 
+  public toLogin(): void {
+    this.cookiesService.set('token', 'qweqweqwe');
+  }
 }

@@ -8,3 +8,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   font-size: 1.5em;
   color: #0078d2;
 }
+
+a.product-link {
+  color: black !important;
+  text-decoration: none !important;
+}
+.product-area{
+  height: 25em;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+a.product-link :hover{
+  background-color: #ddd;
+}

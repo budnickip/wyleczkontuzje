@@ -1,9 +1,14 @@
 <div class="container">
   <div class="row mt-4">
     <div class="col-lg-4">
-      <div>
-        <fa-icon [icon]="faShoppingCart" class="shop-icon"></fa-icon> Dodaj do koszyka
+      <div *ngIf="floss.amount > 0; else elseBlock" class="col-lg-6 mb-2 mt-2">
+        <button type="button" (click)="addToCart(floss)" class="btn btn-primary"><fa-icon [icon]="faShoppingCart"></fa-icon> Do koszyka</button>
       </div>
+      <ng-template #elseBlock>
+        <div class="col-lg-6 mb-2 mt-2">
+          <button type="button" (click)="addToCart(floss)" class="btn btn-primary" title="Brak produktu w magazynie!" disabled><fa-icon [icon]="faShoppingCart" ></fa-icon> Do koszyka</button>
+        </div>
+      </ng-template>
       <a routerLink="/floss" class="product-link">
         <div class="product-area text-center">
           <h4> {{floss.name}} </h4>
@@ -17,9 +22,14 @@
     </div>
 
     <div class="col-lg-4">
-      <div>
-        <fa-icon [icon]="faShoppingCart" class="shop-icon"></fa-icon> Dodaj do koszyka
+      <div *ngIf="band.amount > 0; else elseBlock" class="col-lg-6 mb-2 mt-2">
+        <button type="button" (click)="addToCart(band)" class="btn btn-primary"><fa-icon [icon]="faShoppingCart"></fa-icon> Do koszyka</button>
       </div>
+      <ng-template #elseBlock>
+        <div class="col-lg-6 mb-2 mt-2">
+          <button type="button" (click)="addToCart(band)" class="btn btn-primary" title="Brak produktu w magazynie!" disabled><fa-icon [icon]="faShoppingCart" ></fa-icon> Do koszyka</button>
+        </div>
+      </ng-template>
       <a routerLink="/band" class="product-link">
         <div class="product-area text-center">
           <h4> {{band.name}} </h4>
@@ -33,9 +43,14 @@
     </div>
 
     <div class="col-lg-4">
-      <div>
-        <fa-icon [icon]="faShoppingCart" class="shop-icon"></fa-icon> Dodaj do koszyka
+      <div *ngIf="ball.amount > 0; else elseBlock" class="col-lg-6 mb-2 mt-2">
+        <button type="button" (click)="addToCart(ball)" class="btn btn-primary"><fa-icon [icon]="faShoppingCart"></fa-icon> Do koszyka</button>
       </div>
+      <ng-template #elseBlock>
+        <div class="col-lg-6 mb-2 mt-2">
+          <button type="button" (click)="addToCart(ball)" class="btn btn-primary" title="Brak produktu w magazynie!" disabled><fa-icon [icon]="faShoppingCart" ></fa-icon> Do koszyka</button>
+        </div>
+      </ng-template>
       <a routerLink="/ball" class="product-link">
         <div class="product-area text-center">
           <h4> {{ball.name}} </h4>
@@ -51,9 +66,14 @@
 
   <div class="row mt-4">
     <div class="col-lg-4">
-      <div>
-        <fa-icon [icon]="faShoppingCart" class="shop-icon"></fa-icon> Dodaj do koszyka
+      <div *ngIf="mat.amount > 0; else elseBlock" class="col-lg-6 mb-2 mt-2">
+        <button type="button" (click)="addToCart(mat)" class="btn btn-primary"><fa-icon [icon]="faShoppingCart"></fa-icon> Do koszyka</button>
       </div>
+      <ng-template #elseBlock>
+        <div class="col-lg-6 mb-2 mt-2">
+          <button type="button" (click)="addToCart(mat)" class="btn btn-primary" title="Brak produktu w magazynie!" disabled><fa-icon [icon]="faShoppingCart" ></fa-icon> Do koszyka</button>
+        </div>
+      </ng-template>
       <a routerLink="/mat" class="product-link">
         <div class="product-area text-center">
           <h4> {{mat.name}} </h4>
@@ -67,9 +87,14 @@
     </div>
 
     <div class="col-lg-4">
-      <div>
-        <fa-icon [icon]="faShoppingCart" class="shop-icon"></fa-icon> Dodaj do koszyka
+      <div *ngIf="roller.amount > 0; else elseBlock" class="col-lg-6 mb-2 mt-2">
+        <button type="button" (click)="addToCart(roller)" class="btn btn-primary"><fa-icon [icon]="faShoppingCart"></fa-icon> Do koszyka</button>
       </div>
+      <ng-template #elseBlock>
+        <div class="col-lg-6 mb-2 mt-2">
+          <button type="button" (click)="addToCart(roller)" class="btn btn-primary" title="Brak produktu w magazynie!" disabled><fa-icon [icon]="faShoppingCart" ></fa-icon> Do koszyka</button>
+        </div>
+      </ng-template>
       <a routerLink="/roller" class="product-link">
         <div class="product-area text-center">
           <h4> {{roller.name}} </h4>

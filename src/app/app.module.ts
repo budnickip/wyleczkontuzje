@@ -30,6 +30,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatNativeDateModule} from '@angular/material/core';
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
+import { CookieService } from 'ngx-cookie-service';
+import { CookiesService } from './cookies.service';
+import { MyaccountComponent } from './myaccount/myaccount.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +53,8 @@ import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
     BallComponent,
     RollerComponent,
     MatComponent,
-    ShoppingcartComponent
+    ShoppingcartComponent,
+    MyaccountComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +67,10 @@ import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
     BrowserAnimationsModule,
     MatNativeDateModule
   ],
-  providers: [],
+  providers: [
+    CookieService,
+    CookiesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
