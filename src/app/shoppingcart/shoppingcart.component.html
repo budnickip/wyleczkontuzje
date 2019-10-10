@@ -7,6 +7,11 @@
         <span>{{ item.name }}</span>
         <span>{{ item.price }}</span>
       </div>
+      <div class="row" *ngIf='summary'>
+        <div class="col-12">
+          <p> Łączna kwota:  {{summary}} </p>
+         </div>
+      </div>
       <button type="button" (click)="onClear()" class="btn btn-primary mt-4"> Wyczyść koszyk </button>
     </div>
   </div>

@@ -23,7 +23,7 @@ export const BALL: Product = {
   name: 'Kauczukowa Piłeczka',
   price: 15,
   shortdescription: 'Idealna do rozluźniania miejscowego',
-  description: 'Idealna do rozluźniania bolącego miejsca, dociera w najgłębszy ból',
+  description: 'Idealna do rozluźniania bolącego miejsca, dociera w najgłębszy ból. Pozwala na rozklejanie powięzi, które powodują duży ból.',
   image: 'assets/img/products/ball.jpg',
   amount: 2
 }
