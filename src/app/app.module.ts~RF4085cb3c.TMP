@@ -37,7 +37,6 @@ import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 import { CookieService } from 'ngx-cookie-service';
 import { CookiesService } from './cookies.service';
 import { MyaccountComponent } from './myaccount/myaccount.component';
-import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -65,8 +64,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-      FontAwesomeModule,
-      ReactiveFormsModule,
+    FontAwesomeModule,
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot(),

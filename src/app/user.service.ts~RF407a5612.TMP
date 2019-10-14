@@ -1,0 +1,41 @@
+import { Injectable } from '@angular/core';
+import { User } from './user';
+import { USERS } from './mock-users';
+import { Observable, of } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Component, OnInit, Input } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class UserService {
+  private usersUrl = 'api/users';
+  user = User;
+
+
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
+
+  constructor(private http: HttpClient) { }
+
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(this.usersUrl);
+  }
+  updateUser (user): Observable<any> {
+    console.log(user); //przekazuje prawidlowo
+    return this.http.put(this.usersUrl, user, this.httpOptions); //chuj nie wys
+
+  }
+    /** DELETE: delete the hero from the server */
+  deleteUser (user: User): Observable<User> {
+    const url = `${this.usersUrl}`;
+    return this.http.delete<User>(url, this.httpOptions);
+  }
+
+  /** POST: add a new hero to the server */
+  addUser (user): Observable<User> {
+    return this.http.post<User>(this.usersUrl, user, this.httpOptions);
+  }
+
+}

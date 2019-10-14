@@ -18,12 +18,8 @@ export class AdminComponent implements OnInit {
   roller = ROLLER;
   emailn: string;
   passwordn: string;
-  users: User[];
-    usernew: User;
-    addUser: User = {
-        email: '',
-        password: ''
-    };
+  users;
+  usernew: User;
   constructor(private userService: UserService,
               private location: Location) { }
 
@@ -40,28 +36,27 @@ export class AdminComponent implements OnInit {
     this.location.back();
   }
 
-  add(): void {
-      console.log('addUser', this.addUser);
-      this.userService.addUser(this.addUser)
-          .subscribe((usernew: User) => {
+  add(email: string, password: string): void {
+  //  this.usernew = JSON.stringify({email: email, password: password});
+
+    this.usernew.email = JSON.stringify({email});
+    this.usernew.password = JSON.stringify({password});
+    console.log(password);
+    this.userService.addUser( this.usernew)
+      .subscribe(usernew => {
         this.users.push(usernew);
       });
   }
 
   save(user: User): void {
-    console.log(user);
-      this.userService.updateUser(user).subscribe((data: any) => {
-      });
+    console.log(user); //przekazuje prawidlowo
+   this.userService.updateUser(user);
 
    }
 
-    delete(userIdx: number): void {
-        let user = this.users[userIdx];
-        console.log('user', user);
-       this.userService.deleteUser(user.id).subscribe(() => {
-           console.log('ok');
-           this.users.splice(userIdx, 1);
-       });
+   delete(user: User): void {
+    this.users = this.users.filter(h => h !== user);
+    this.userService.deleteUser(user).subscribe();
   }
 
 }

@@ -5,17 +5,22 @@
     </div>
   </div>
 
-  <form class="form-registration mb-4 mt-4">
+  <form class="form-registration mb-4 mt-4" [formGroup]="registrationForm" (submit)="register()">
     <img class="mb-3 mx-auto d-block" src="assets/img/wyleczkontuzje_foto.png" alt="" width="90" height="72">
     <h1 class="h3 mb-3 font-weight-normal text-center">Rejestracja</h1>
     <div class="form-group">
       <label for="remail">E-mail *</label>
-      <input type="remail" class="form-control" id="remail" placeholder="Wpisz swój email" required>
+      <input type="email" class="form-control" id="remail" placeholder="Wpisz swój email" formControlName="email" required>
+      <ng-container *ngIf="registrationForm.controls['email'].touched && registrationForm.hasError('emailNotValidate')">
+        <small class="form-text text-muted">
+          Wpisz poprawny email
+        </small>
+      </ng-container>
     </div>
 
     <div class="form-group">
       <label for="rpassword">Hasło *</label>
-      <input type="rpassword" class="form-control" id="rpassword" placeholder="Wpisz swoje hasło" required>
+      <input type="password" class="form-control" id="rpassword" placeholder="Wpisz swoje hasło"  formControlName="password">
       <small class="form-text text-muted">
         Hasło musi zawierać conajmniej 8 znaków w tym conajmniej jedną cyfrę
       </small>
@@ -85,6 +90,6 @@
         <input type="checkbox" value="remember"> Zapamiętaj mnie
       </label>
     </div>
-    <button class="btn btn-primary btn-block" type="submit">Zarejestruj się</button>
+    <button class="btn btn-primary btn-block" type="submit" [disabled]="!registrationForm.valid">Zarejestruj się</button>
   </form>
 </div>

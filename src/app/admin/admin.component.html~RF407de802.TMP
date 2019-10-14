@@ -125,24 +125,24 @@
   <h2>Użytkownicy</h2>
   <div>
     <label>Hero name:
-      <input [(ngModel)]="addUser.email" />
+      <input #userEmail />
     </label>
     <label> User password:
-      <input [(ngModel)]="addUser.password" />
+      <input #userPassword />
     </label>
     <!-- (click) passes input value to add() and then clears the input -->
-    <button (click)="add()">
+    <button (click)="add(userEmail.value, userPassword.value)">
       add
     </button>
   </div>
   <ul>
-    <li *ngFor="let user of users; let userIdx = index;">
+    <li *ngFor="let user of users">
       <span>{{user.email}}</span>
       <label>name:
         <input [(ngModel)]="user.email" placeholder="email"/>
       </label>
       <button class="delete" title="delete hero"
-        (click)="delete(userIdx)">x</button>
+        (click)="delete(user)">x</button>
         <button (click)="save(user)">save</button>
 
     </li>
