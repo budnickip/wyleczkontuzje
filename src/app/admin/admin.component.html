@@ -1,24 +1,29 @@
 <div class="container">
   <div class="row mb-2 mt-2">
-    <div class="col-lg-2">
-      Nazwa
-    </div>
-    <div class="col-lg-2">
-      Cena
-    </div>
-    <div class="col-lg-2">
-      Krótki opis
-    </div>
-    <div class="col-lg-2">
-      Opis
-    </div>
-    <div class="col-lg-2">
-      Obraz
-    </div>
-    <div class="col-lg-2">
-      Ilość
+    <div class="col-12">
+      <h2>Produkty</h2>
     </div>
   </div>
+    <div class="row mb-2 mt-2">
+      <div class="col-lg-2">
+        Nazwa
+      </div>
+      <div class="col-lg-2">
+        Cena
+      </div>
+      <div class="col-lg-2">
+        Krótki opis
+      </div>
+      <div class="col-lg-2">
+        Opis
+      </div>
+      <div class="col-lg-2">
+        Obraz
+      </div>
+      <div class="col-lg-2">
+        Ilość
+      </div>
+    </div>
   <div class="row mb-2 mt-2">
     <div class="col-lg-2">
       <input [(ngModel)]="floss.name" placeholder="name"/>
@@ -121,33 +126,47 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container mt-3 mb-2">
   <h2>Użytkownicy</h2>
   <div>
-    <label>Hero name:
+    <label>
+      Email:
       <input [(ngModel)]="addUser.email" />
     </label>
-    <label> User password:
+    <label>
+      Hasło:
       <input [(ngModel)]="addUser.password" />
     </label>
-    <!-- (click) passes input value to add() and then clears the input -->
-    <button (click)="add()">
-      add
+
+    <button class="loginbutton" (click)="add()">
+      Dodaj użytkownika
     </button>
   </div>
+
+  <div class="row">
+    <div class="col-12 mt-2 mb-2">
+      <h3> Lista użytkowników</h3>
+    </div>
+  </div>
+
   <ul>
     <li *ngFor="let user of users; let userIdx = index;">
-      <span>{{user.email}}</span>
-      <label>name:
-        <input [(ngModel)]="user.email" placeholder="email"/>
+      <label>
+        Email:
+        <input [(ngModel)]="user.email" />
       </label>
-      <button class="delete" title="delete hero"
-        (click)="delete(userIdx)">x</button>
-        <button (click)="save(user)">save</button>
+      <label>
+        Hasło:
+        <input [(ngModel)]="user.password" />
+      </label>
+      <button class="delete" title="usuń użytkownika"
+              (click)="delete(userIdx)">
+        x
+      </button>
+      <button class="loginbutton" title="zapisz użytkownika" (click)="save(user)">Zapisz</button>
 
     </li>
   </ul>
 
-  <button (click)="goBack()">go back</button>
-  <button (click)="save()">save</button>
+  <button class="loginbutton" (click)="goBack()">Powrót</button>
 </div>

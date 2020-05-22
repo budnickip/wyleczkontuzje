@@ -1,14 +1,15 @@
   <form class="form-login text-center mt-4 mb-4" [formGroup]="loginForm" (submit)="toLogin()">
-     <img class="mb-3" src="assets/img/wyleczkontuzje_foto.png" alt="" width="90" height="72">
-     <h1 class="h3 mb-3 font-weight-normal">Logowanie</h1>
-     <label for="iEmail" class="sr-only">e-mail</label>
-     <input type="email" id="iEmail" class="form-control mb-3" placeholder="e-mail" required autofocus formControlName="email">
-     <label for="iPassword" class="sr-only">hasło</label>
-     <input type="password" id="iPassword" class="form-control mb-3" placeholder="hasło" required formControlName="password">
-     <div class="checkbox mb-3">
-       <label>
-         <input type="checkbox" value="remember"> Zapamiętaj mnie
-       </label>
-     </div>
-     <button class="btn btn-primary btn-block" type="submit">Zaloguj się</button>
-   </form>
+  <img class="mb-3" src="assets/img/wyleczkontuzje_foto.png" alt="" width="90" height="72">
+  <h1 class="h3 mb-3 font-weight-normal">Logowanie</h1>
+  <label for="iEmail" class="sr-only">e-mail</label>
+  <input type="email" id="iEmail" class="form-control mb-3" placeholder="e-mail" required autofocus formControlName="email">
+  <label for="iPassword" class="sr-only">hasło</label>
+  <input type="password" id="iPassword" class="form-control mb-3" placeholder="hasło" required formControlName="password">
+  <small id="loginError"class="form-text text-muted"> </small> 
+  <div class="checkbox mb-3">
+    <label>
+      <input type="checkbox" value="remember"> Zapamiętaj mnie
+    </label>
+  </div>
+  <button class="btn btn-primary btn-block" type="submit">Zaloguj się</button>
+</form>

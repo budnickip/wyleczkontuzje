@@ -37,6 +37,6 @@ path {
 }
 
 svg a:hover path {
- fill:  rgba(207, 0, 15, 0.25);
+ fill:  rgba(0, 119, 210, 0.5);
  cursor: pointer;
 }

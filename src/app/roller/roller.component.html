@@ -1,3 +1,28 @@
-<p>
-  roller works!
-</p>
+<div class="container">
+  <div class="row mt-4">
+    <div class="col-lg-6 offset-lg-3">
+      <div>
+        <h4 class="text-center"> {{roller.name}} </h4>
+        <img class="img-fluid" src="{{roller.image}}" alt="roller">
+        <div class="mt-4">
+          <p> {{roller.description}} </p>
+          <div class="row">
+            <div class="col-lg-6">
+              <p class="font-weight-bold"> Cena {{roller.price}} zł </p>
+              <p> ilość w magazynie: {{roller.amount}} </p>
+            </div>
+            <div *ngIf="roller.amount > 0; else elseBlock" class="col-lg-6 mb-2 mt-2">
+              <button type="button" (click)="addToCart(roller)" class="btn btn-primary"><fa-icon [icon]="faShoppingCart"></fa-icon> Do koszyka</button>
+            </div>
+            <ng-template #elseBlock>
+              <div class="col-lg-6 mb-2 mt-2">
+                <button type="button" (click)="addToCart(roller)" class="btn btn-primary" title="Brak produktu w magazynie!" disabled><fa-icon [icon]="faShoppingCart"></fa-icon> Do koszyka</button>
+              </div>
+            </ng-template>
+            <button type="button" (click)="goBack()" class="btn btn-primary btn-block">Powrót</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

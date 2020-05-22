@@ -6,3 +6,21 @@
   justify-content: space-between;
   border-radius: 5px;
 }
+ul {
+  list-style: none;
+}
+
+.loginbutton {
+  margin-left: 1em;
+  min-width: 2em;
+  border: none;
+  border-radius: 6px;
+  background-color: #004579;
+  color: white;
+  font-size: 16px;
+}
+
+input {
+  margin: 0.3em;
+  border-radius: 6px;
+}

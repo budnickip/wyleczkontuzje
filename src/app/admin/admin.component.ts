@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FLOSS, BAND, BALL, MAT, ROLLER } from '../mock-product';
 import { UserService } from '../user.service';
 import { Location } from '@angular/common';
-import { User } from '../user'; // tego nie powinno tutaj być
+import { User } from '../user'; 
 
 @Component({
   selector: 'app-admin',
@@ -33,7 +33,6 @@ export class AdminComponent implements OnInit {
   getUsers(): void {
     this.userService.getUsers()
       .subscribe(users => this.users = users);
-
   }
 
   goBack(): void {

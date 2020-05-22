@@ -9,9 +9,10 @@ import { Component, OnInit, Input } from '@angular/core';
   providedIn: 'root'
 })
 export class UserService {
-  private usersUrl = 'api/users';
+    private usersUrl = 'api/users';
+    private userUrl = 'api/users?email=^'
   user = User;
-
+  mail;
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -22,17 +23,21 @@ export class UserService {
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.usersUrl);
   }
+
+  getUser(mail): Observable<User[]> {
+      return this.http.get<User[]>(this.userUrl + mail);
+  }
+
   updateUser (user): Observable<any> {
     console.log(user); //przekazuje prawidlowo
-    return this.http.put(this.usersUrl + '/' + user.id, user, this.httpOptions); //chuj nie wys
+    return this.http.put(this.usersUrl + '/' + user.id, user, this.httpOptions); 
 
   }
-    /** DELETE: delete the hero from the server */
+
     deleteUser(id: number): Observable<User> {
       return this.http.delete<User>(this.usersUrl + '/' + id, this.httpOptions);
   }
 
-  /** POST: add a new hero to the server */
   addUser (user): Observable<User> {
     return this.http.post<User>(this.usersUrl, user, this.httpOptions);
   }

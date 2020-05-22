@@ -5,19 +5,40 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(items: any[], searchText: string): any[] {
+ // transform(items: any[], searchText: string): any[] {
 
-      if (!items) {
-        return [];
-      }
-      if (!searchText) {
-        return items;
-      }
-      searchText = searchText.toLocaleLowerCase();
+   //   if (!items) {
+   //     return [];
+   //   }
+   //   if (!searchText) {
+   //     return items;
+   //   }
+   //   searchText = searchText.toLocaleLowerCase();
 
-      return items.filter(it => {
-        return it.toLocaleLowerCase().includes(searchText);
-      });
+   //   return items.filter(it => {
+   //     return it.toLocaleLowerCase().includes(searchText);
+    //  });
+   // }
+    transform(arr: any[], prop: string, value: string, method: Method): any {
+        if (arr) {
+            if (!value) {
+                return arr
+            } else {
+                return arr.filter(obj => this.filter(obj[prop], value, method))
+            }
+        } else {
+            return []
+        }
+    }
+
+    filter(source: string, target: string, method: Method): boolean {
+
+        switch (method) {
+            case "includes": return source.includes(target)
+            case "equal": return source === target
+            case "not-equal": return source !== target
+        }
     }
 
 }
+type Method = "includes" | "equal" | "not-equal"

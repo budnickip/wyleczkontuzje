@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import {CookiesService} from '../cookies.service';
+import { KONTUZJE } from '../zbior-kontuzje';
 
 @Component({
   selector: 'app-menu',
@@ -10,13 +11,15 @@ import {CookiesService} from '../cookies.service';
 })
 export class MenuComponent implements OnInit {
   faUser = faUser;
-  faShoppingCart = faShoppingCart;
-  dataset = ['kolano', 'udo', 'obszerny-boczny', 'pośladkowy-wielki', 'wiązadła-krzyżowe', 'trójgłowy', 'łydka'];
+    faShoppingCart = faShoppingCart;
+    kontuzje = KONTUZJE;
+    dataset = ['kolano', 'dwuglowy-uda', 'obszerny-boczny', 'posladkowy-wielki', 'wiązadła-krzyżowe', 'lydka'];
   constructor(public cookiesService: CookiesService) { }
 
 
 
-  ngOnInit() {
+    ngOnInit() {
+        
   }
 
   public logout(): void {

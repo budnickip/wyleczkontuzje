@@ -1,8 +1,15 @@
 <div class="container">
-  <div class="row">
+  <div class="row mt-4 mb-4">
     <div class="col-lg-4 offset-md-4">
       <h3>Twoje produkty</h3>
-
+      <div class="row">
+        <div class="col-2">
+          Nazwa:
+        </div>
+        <div class="col-6 text-right">
+          Cena:
+        </div>
+      </div>
       <div class="item mt-4" *ngFor="let item of items">
         <span>{{ item.name }}</span>
         <span>{{ item.price }}</span>
@@ -14,5 +21,82 @@
       </div>
       <button type="button" (click)="onClear()" class="btn btn-primary mt-4"> Wyczyść koszyk </button>
     </div>
+  </div>
+  <div class="row">
+    <ng-container *ngIf="cookiesService.check('token')">
+      <div class="col-12">
+        <h3>Dane do wysyłki</h3>
+        <ul>
+          <li *ngFor="let user of users">
+            <div class="row mt-3">
+              <div class="col-md-2 text-right">
+                Email:
+              </div>
+              <div class="col-md-4">
+                <input [(ngModel)]="user.email" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-2 text-right">
+                Imię:
+              </div>
+              <div class="col-md-4">
+                <input [(ngModel)]="user.name" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-2 text-right">
+                Nazwisko:
+              </div>
+              <div class="col-md-4">
+                <input [(ngModel)]="user.lastname" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-2 text-right">
+                Ulica:
+              </div>
+              <div class="col-md-4">
+                <input [(ngModel)]="user.street" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-2 text-right">
+                Numer mieszkania:
+              </div>
+              <div class="col-md-4">
+                <input [(ngModel)]="user.houseNr" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-2 text-right">
+                Miasto:
+              </div>
+              <div class="col-md-4">
+                <input [(ngModel)]="user.city" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-2 text-right">
+                Województwo:
+              </div>
+              <div class="col-md-4">
+                <input [(ngModel)]="user.province" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-2 text-right">
+                Kod pocztowy:
+              </div>
+              <div class="col-md-4">
+                <input [(ngModel)]="user.zip" />
+              </div>
+            </div>
+            <button class="loginbutton" title="Zamów" (click)="order()">Zamów</button>
+
+          </li>
+        </ul>
+      </div>
+    </ng-container>
   </div>
 </div>

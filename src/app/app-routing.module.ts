@@ -15,7 +15,9 @@ import { MatComponent} from './mat/mat.component';
 import { RollerComponent} from './roller/roller.component';
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 import { MyaccountComponent} from './myaccount/myaccount.component';
-
+import { CalfComponent } from './calf/calf.component';
+import { GluteusMaximusComponent } from './gluteus-maximus/gluteus-maximus.component';
+import { SemitendinosusComponent } from './semitendinosus/semitendinosus.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/content', pathMatch: 'full'}, //domyślnie na stronie głównej będzie wyświetlał się content
@@ -33,6 +35,9 @@ const routes: Routes = [
   { path: 'roller', component: RollerComponent },
   { path: 'koszyk', component: ShoppingcartComponent },
   { path: 'konto', component: MyaccountComponent },
+  { path: 'lydka', component: CalfComponent },
+  { path: 'dwuglowy-uda', component: SemitendinosusComponent },
+  { path: 'posladkowy-wielki', component: GluteusMaximusComponent },
   { path: 'kolano', component: KneeComponent }
 ];
 

@@ -20,31 +20,34 @@
     </ul>
     <ul class="nav navbar-nav">
       <input class="form-control mr-sm-2 searchbox" type="search" [(ngModel)]="searchText"  placeholder="Wyszukaj kontuzje">
-      <div *ngIf="searchText" >
+      <div *ngIf="searchText">
         <p> Wybierz kontuzje z listy </p>
-        <ul *ngFor="let data of dataset | filter: searchText">
-          <li><a routerLink="/{{data}}">{{data}} </a></li>
+        <!--   <ul *ngFor="let data of dataset | filter: searchText">
+    <li><a routerLink="/{{data}}">{{data}} </a></li>
+  </ul> -->
+        <ul class="search-result" *ngFor="let data of kontuzje | filter: 'nazwa': searchText: 'includes' ">
+          <li><a routerLink="/{{data.link}}">{{data.nazwa}} </a></li>
         </ul>
       </div>
-      <a routerLink="/admin">
-        <fa-icon [icon]="faUser" class="d-none d-lg-block menu-icon"></fa-icon>
-      </a><!-- ukrywam ikonę, kiedy szerokość strony odpowiada
-      urządzeniom mobilnym -- ikona pobrana z fontawesome, zeby to zrobic najpierw musiałem zainstalować FA, później w wybranym module
-    zaimportować ją z @fortawesome/free-solid-svg-icons' -->
-    <ng-container *ngIf="!cookiesService.check('token'); else userLogged;">
-      <li class="nav-item">
-        <a class="nav-item nav-link" routerLink="/rejestracja">Rejestracja</a>
-        <a class="nav-item nav-link" routerLink="/logowanie">Logowanie</a>
-      </li>
-      </ng-container>
+    <a routerLink="/admin">
+      <fa-icon [icon]="faUser" class="d-none d-lg-block menu-icon"></fa-icon>
+    </a><!-- ukrywam ikonę, kiedy szerokość strony odpowiada
+    urządzeniom mobilnym -- ikona pobrana z fontawesome, zeby to zrobic najpierw musiałem zainstalować FA, później w wybranym module
+  zaimportować ją z @fortawesome/free-solid-svg-icons' -->
+        <ng-container *ngIf="!cookiesService.check('token'); else userLogged;">
+          <li class="nav-item">
+            <a class="nav-item nav-link" routerLink="/rejestracja">Rejestracja</a>
+            <a class="nav-item nav-link" routerLink="/logowanie">Logowanie</a>
+          </li>
+        </ng-container>
 
-      <ng-template #userLogged>
-        <li class="nav-item">
-          <a class="nav-item nav-link" routerLink="/konto">Moje konto</a>
-          <a class="nav-item nav-link" (click)="logout()">Wyloguj</a>
-        </li>
-      </ng-template>
-  </ul>
+        <ng-template #userLogged>
+          <li class="nav-item">
+            <a class="nav-item nav-link" routerLink="/konto">Moje konto</a>
+            <a class="nav-item nav-link" (click)="logout()">Wyloguj</a>
+          </li>
+        </ng-template>
+</ul>
   </div>
  </nav>
  <a routerLink="/koszyk">

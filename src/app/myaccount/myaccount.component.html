@@ -1,13 +1,85 @@
 <div class="container mt-4">
   <div class="row">
     <div class="col-12">
-      <p> Lista Twoich kontuzji </p>
+      <h2>Lista Twoich kontuzji:</h2> 
       <ul>
         <ng-container *ngIf="cookiesService.check('obszerny'); else userObszerny;">
           <li> Mięsień czworogłowy uda </li>
         </ng-container>
-
       </ul>
     </div>
   </div>
+
+  <ul>
+    <li *ngFor="let user of users">
+      <h2>Twoje dane:</h2>
+      <div class="row mt-3">
+        <div class="col-md-2 text-right">
+          Email:
+        </div>
+        <div class="col-md-4">
+          <input [(ngModel)]="user.email" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2 text-right">
+          Imię:
+        </div>
+        <div class="col-md-4">
+          <input [(ngModel)]="user.name" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2 text-right">
+          Nazwisko:
+        </div>
+        <div class="col-md-4">
+          <input [(ngModel)]="user.lastname" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2 text-right">
+          Ulica:
+        </div>
+        <div class="col-md-4">
+          <input [(ngModel)]="user.street" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2 text-right">
+          Numer mieszkania:
+        </div>
+        <div class="col-md-4">
+          <input [(ngModel)]="user.houseNr" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2 text-right">
+          Miasto:
+        </div>
+        <div class="col-md-4">
+          <input [(ngModel)]="user.city" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2 text-right">
+          Województwo:
+        </div>
+        <div class="col-md-4">
+          <input [(ngModel)]="user.province" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2 text-right">
+          Kod pocztowy:
+        </div>
+        <div class="col-md-4">
+          <input [(ngModel)]="user.zip" />
+        </div>
+      </div>
+
+      <button class="loginbutton" title="zapisz użytkownika" (click)="save(user)">Zapisz</button>
+
+    </li>
+  </ul>
 </div>

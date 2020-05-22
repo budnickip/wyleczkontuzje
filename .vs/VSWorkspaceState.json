@@ -3,10 +3,10 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\admin",
     "\\src\\app\\login",
-    "\\src\\app\\registration"
+    "\\src\\app\\myaccount",
+    "\\src\\app\\shoppingcart"
   ],
-  "SelectedNode": "\\package.json",
+  "SelectedNode": "\\src\\app\\shoppingcart\\shoppingcart.component.ts",
   "PreviewInSolutionExplorer": false
 }

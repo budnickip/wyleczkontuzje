@@ -38,6 +38,9 @@ import { CookieService } from 'ngx-cookie-service';
 import { CookiesService } from './cookies.service';
 import { MyaccountComponent } from './myaccount/myaccount.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CalfComponent } from './calf/calf.component';
+import { SemitendinosusComponent } from './semitendinosus/semitendinosus.component';
+import { GluteusMaximusComponent } from './gluteus-maximus/gluteus-maximus.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +62,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     RollerComponent,
     MatComponent,
     ShoppingcartComponent,
-    MyaccountComponent
+    MyaccountComponent,
+    CalfComponent,
+    SemitendinosusComponent,
+    GluteusMaximusComponent
   ],
   imports: [
     BrowserModule,
