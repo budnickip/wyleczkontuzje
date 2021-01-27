@@ -3,7 +3,7 @@
     <div class="col-12">
       <h2>Lista Twoich kontuzji:</h2> 
       <ul>
-        <ng-container *ngIf="cookiesService.check('obszerny'); else userObszerny;">
+        <ng-container *ngIf="cookiesService.check('obszerny');">
           <li> Mięsień czworogłowy uda </li>
         </ng-container>
       </ul>

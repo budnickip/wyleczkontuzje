@@ -13,6 +13,7 @@ export class MenuComponent implements OnInit {
   faUser = faUser;
     faShoppingCart = faShoppingCart;
     kontuzje = KONTUZJE;
+    public searchText: string = '';
     dataset = ['kolano', 'dwuglowy-uda', 'obszerny-boczny', 'posladkowy-wielki', 'wiązadła-krzyżowe', 'lydka'];
   constructor(public cookiesService: CookiesService) { }
 

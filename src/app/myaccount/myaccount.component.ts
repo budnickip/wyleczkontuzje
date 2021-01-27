@@ -12,7 +12,7 @@ export class MyaccountComponent implements OnInit {
     user: User;
     users: User[];
     str2 = this.cookiesService.get('token').slice(0, this.cookiesService.get('token').indexOf('@'));
-    constructor(private cookiesService: CookiesService,
+    constructor(public cookiesService: CookiesService,
         private userService: UserService ) { }
 
     ngOnInit() {

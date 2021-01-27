@@ -16,7 +16,7 @@ export class ShoppingcartComponent implements OnInit {
     users: User[];
     str2 = this.cookiesService.get('token').slice(0, this.cookiesService.get('token').indexOf('@'));
     constructor(private cartService: CartService,
-        private cookiesService: CookiesService,
+        public cookiesService: CookiesService,
         private userService: UserService ) { }
 
   ngOnInit() {
